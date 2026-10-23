@@ -19,6 +19,7 @@ class IncorrectPasswordError extends CredentialsSignin {
 export const { handlers, auth, signIn, signOut } = NextAuth({
     session: {
         strategy: "jwt",
+        maxAge: 2 * 60 * 60
     },
 
     providers: [

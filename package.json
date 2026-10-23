@@ -13,7 +13,7 @@
     "bcrypt": "^6.0.0",
     "konva": "^10.7.1",
     "lucide-react": "^1.55.0",
-    "next": "16.4.0",
+    "next": "^16.4.1",
     "next-auth": "^5.0.0-beta.32",
     "react": "19.3.0",
     "react-dom": "19.3.0",
