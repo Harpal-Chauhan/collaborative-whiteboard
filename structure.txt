@@ -1,0 +1,46 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 92DF-4530
+D:\PRACTICE CODAGE\07. WHITEBOARD\COLLABORATIVE-WHITEBOARD\SRC
+|   auth.ts
+|   
++---app
+|   |   favicon.ico
+|   |   globals.css
+|   |   layout.tsx
+|   |   page.tsx
+|   |   
+|   +---api
+|   |   +---auth
+|   |   |   +---signup
+|   |   |   |       route.ts
+|   |   |   |       
+|   |   |   \---[...nextauth]
+|   |   |           route.ts
+|   |   |           
+|   |   \---whiteboards
+|   |       |   route.ts
+|   |       |   
+|   |       \---[id]
+|   |           \---share
+|   |                   route.ts
+|   |                   
+|   +---login
+|   |       page.tsx
+|   |       
+|   +---signup
+|   |       page.tsx
+|   |       
+|   \---whiteboard
+|           page.tsx
+|           
++---components
+|       Navbar.tsx
+|       Provider.tsx
+|       WhiteboardCanvas.tsx
+|       
++---hooks
+|       useWhiteboardSync.ts
+|       
+\---lib
+        prisma.ts
+        

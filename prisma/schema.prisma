@@ -1,0 +1,50 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum BoardRole {
+  OWNER
+  EDITOR
+  VIEWER
+}
+
+model User {
+  id               String        @id @default(cuid())
+  name             String?
+  email            String        @unique
+  passwordHash     String
+  whiteboards      Whiteboard[]
+  boardMemberships BoardMember[]
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+}
+
+model Whiteboard {
+  id        String        @id @default(cuid())
+  title     String        @default("Untitled Whiteboard")
+  content   String        @default("[]")
+  ownerId   String
+  owner     User          @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  members   BoardMember[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model BoardMember {
+  id        String     @id @default(cuid())
+  boardId   String
+  userId    String
+  role      BoardRole  @default(VIEWER)
+  board     Whiteboard @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+
+  @@unique([boardId, userId])
+  @@index([userId])
+}

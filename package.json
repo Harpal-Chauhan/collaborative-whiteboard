@@ -9,17 +9,30 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcrypt": "^6.0.0",
+    "konva": "^10.7.1",
+    "lucide-react": "^1.55.0",
     "next": "16.4.0",
+    "next-auth": "^5.0.0-beta.32",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-konva": "^19.3.0",
+    "y-indexeddb": "^9.0.12",
+    "y-websocket": "^1.5.4",
+    "yjs": "^13.6.33",
+    "zod": "^4.6.6",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "prisma": "^6.19.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
