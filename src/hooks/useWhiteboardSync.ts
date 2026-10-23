@@ -53,8 +53,12 @@ export const useWhiteboardSync = (roomName: string) => {
 
         if (cancelled) return;
 
+        const websocketUrl =
+          process.env.NEXT_PUBLIC_WEBSOCKET_URL ||
+          "ws://localhost:1234";
+
         provider = new WebsocketProvider(
-          "ws://localhost:1234",
+          websocketUrl,
           roomName,
           doc
         );
